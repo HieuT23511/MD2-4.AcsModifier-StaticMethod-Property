@@ -1,16 +1,18 @@
 import {Product} from "./Product";
+// Ham chuyen doi tien te sang dang number.
+const formatter = new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+});
 
 export class ProductManager{
-    private _product = [];
+    private _product: Product[] = [];
     constructor() {
     };
     getAll(){
-        const formatter = new Intl.NumberFormat('vi-VN', {
-            style: 'currency',
-            currency: 'VND',
-        });
+        console.log(`List of Product:`);
        this._product.forEach (elt=>{
-           console.log(`This price of product ${elt.getName()} is ${formatter.format(elt.getPrice())}`)
+           console.log(`-This price of product ${elt.getName()} is ${formatter.format(elt.getPrice())}`)
        })
     }
     addProduct(product:Product){
