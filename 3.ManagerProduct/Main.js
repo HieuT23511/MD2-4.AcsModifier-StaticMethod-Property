@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Product_1 = require("./Product");
+var ProductManager_1 = require("./ProductManager");
+var laptop = new Product_1.Product('HP', 12000000);
+var nokia = new Product_1.Product('Brick', 200000);
+var productManager = new ProductManager_1.ProductManager();
+productManager.addProduct(laptop);
+productManager.addProduct(nokia);
+productManager.getAll();
